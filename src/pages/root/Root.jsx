@@ -1,4 +1,3 @@
-import React from 'react';
 import NavBar from '../../components/header/NavBar';
 import { Outlet } from 'react-router';
 import Footer from '../../components/footer/Footer';
