@@ -1,3 +1,4 @@
+import { IoStarHalf } from "react-icons/io5";
 
 const Book = ({ elem }) => {
     const { bookName, image, rating, category, tags, yearOfPublishing, publisher } = elem;
@@ -15,7 +16,10 @@ const Book = ({ elem }) => {
                 <p>{publisher}</p>
                 <div className="card-actions justify-end">
                     <div className="badge badge-outline">{category}</div>
-                    <div className="badge badge-outline">{rating}</div>
+                    <div className="badge badge-outline">
+                        {rating}<IoStarHalf />
+
+                    </div>
                 </div>
             </div>
         </div>
