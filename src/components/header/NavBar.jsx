@@ -1,8 +1,13 @@
+import { Link } from "react-router";
 
 const NavBar = () => {
     const links = <>
-        <li className="mr-4">Home</li>
-        <li className="mr-4">About</li>
+        <Link to='/'>
+            <li className="mr-4">Home</li>
+        </Link>
+        <Link to='/about'>
+            <li className="mr-4">About</li>
+        </Link>
     </>
     return (
         <div className="navbar bg-base-100 shadow-sm">
