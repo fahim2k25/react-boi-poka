@@ -2,7 +2,7 @@ import { IoStarHalf } from "react-icons/io5";
 import { Link } from "react-router";
 
 const Book = ({ elem }) => {
-    const { bookId, bookName, image, rating, category, tags, yearOfPublishing, publisher } = elem;
+    const { bookName, image, rating, category, yearOfPublishing, publisher, bookId } = elem;
     return (
         <Link to={`/bookdeetz/${bookId}`}>
             <div className="card bg-base-100 shadow-sm">
