@@ -1,13 +1,16 @@
 import { useLoaderData, useParams } from "react-router";
+import { addToStorageDB } from "../../utility/addToDb"
 
 const BookDetails = () => {
     let params = useParams();
     const paramsID = params.bookID;
-
     const newData = useLoaderData();
     const singleBook = newData.find(elem => elem.bookId == paramsID);
     const { bookName, image, rating, category, tags, yearOfPublishing, publisher, review, author, totalPages } = singleBook;
 
+    const handleMarkRead = (paramsID) => {
+        addToStorageDB(paramsID);
+    }
 
     return (
         <div className="flex justify-between mb-5">
@@ -25,7 +28,8 @@ const BookDetails = () => {
                     <span className="font-bold">Review:</span> {review}
                 </p>
                 <div className="my-5">
-                    <span className="font-bold mr-3">Tag:</span> {tags.map(elem => <div className="badge badge-primary mr-3">{elem}</div>)}
+                    <span className="font-bold mr-3">Tag:</span>
+                    {tags.map((elem, index) => <div key={index} className="badge badge-primary mr-3">{elem}</div>)}
                 </div>
                 <div className="divider"></div>
                 <div className="flex gap-5">
@@ -45,8 +49,8 @@ const BookDetails = () => {
                     <p className="font-bold">{rating}</p>
                 </div>
                 <div className=" my-4 flex gap-4">
-                    <button className="btn btn-outline">Read</button>
-                    <button className="btn btn-soft btn-info">Wishlist</button>
+                    <button onClick={() => handleMarkRead(paramsID)} className="btn btn-outline">Mark as Read</button>
+                    <button className="btn btn-soft btn-info">Add to Wishlist</button>
                 </div>
             </div>
         </div>
