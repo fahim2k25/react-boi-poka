@@ -3,7 +3,7 @@ const Banner = () => {
     return (
         <div className="flex justify-between m-5 p-7">
             <div>
-                <h1 className="text-6xl font-semibold font-mono mb-5">Boi Poka Amra</h1>
+                <h1 className="text-6xl font-semibold font-mono mb-5">boI pokA amrA</h1>
                 <button className="btn btn-accent">View List</button>
             </div>
             <div>
